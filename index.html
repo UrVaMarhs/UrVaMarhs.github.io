@@ -5,7 +5,17 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Marjorie Burnea-Abancia | Executive & Virtual Assistant</title>
 <meta name="description" content="Executive and Virtual Assistant supporting founders and businesses with scheduling, administration, outreach, research, finance support and content.">
-<style>
+<style>/* Selected Results animation */
+.portfolio .result {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.portfolio .result.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 :root{--ink:#252824;--olive:#68705a;--olive2:#89907a;--cream:#f5f0e7;--paper:#fbf8f2;--brown:#ad765d;--line:#d9d1c4;--white:#fff}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
 .nav{min-height:74px;display:flex;align-items:center;justify-content:space-between;padding:14px 7vw;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(251,248,242,.97);z-index:10}
@@ -80,7 +90,17 @@ footer{display:flex;justify-content:space-between;gap:20px;padding:25px 7vw;font
 <div class="actions" style="justify-content:center"><a class="btn light email" href="mailto:burneamarjorieyourva@gmail.com">Email Me</a><a class="btn light" href="https://www.linkedin.com/in/marjorie-burnea-1403251a6" target="_blank" rel="noopener">LinkedIn</a></div></section>
 </main>
 <footer><span>© 2026 Marjorie Burnea-Abancia</span><span>Executive & Virtual Assistant</span></footer>
-<script>
+<script>const resultCards = document.querySelectorAll('.portfolio .result');
+
+const resultObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.2 });
+
+resultCards.forEach(card => resultObserver.observe(card));
 const b=document.querySelector('.menu'),n=document.querySelector('nav');
 b.addEventListener('click',()=>n.classList.toggle('open'));
 document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>n.classList.remove('open')));
