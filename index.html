@@ -34,9 +34,15 @@ h1,h2{font-family:Georgia,"Times New Roman",serif;line-height:1.06;margin:15px 0
 .portfolio{text-align:center;background:var(--paper)}.portfolio p{max-width:720px;margin:0 auto 28px}.contact{text-align:center;background:var(--olive);color:white}.contact .sectionno{color:#ead1c4}.contact p{max-width:720px;margin:0 auto 28px}.email{word-break:break-word}
 footer{display:flex;justify-content:space-between;gap:20px;padding:25px 7vw;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
 @media(max-width:760px){.menu{display:block}nav{display:none;position:absolute;left:0;right:0;top:74px;background:var(--paper);padding:22px 7vw;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}nav.open{display:flex}section{padding:65px 7vw}.hero{min-height:auto;padding-top:85px;padding-bottom:85px}.about,.tools,.case{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.portrait-wrap{max-width:460px;margin:auto}footer{flex-direction:column}}
-@media(max-width:760px){
-  .tools{padding-top:100px;}
-}</style>
+@media(max-width:760px){.tools{padding-top:100px;}}.toolgrid span {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.toolgrid span:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.10);
+}
+</style>
 </head>
 <body>
 <header class="nav">
